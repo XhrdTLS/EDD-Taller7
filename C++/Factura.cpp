@@ -46,8 +46,6 @@ int Factura::iva(){
     iva = (get_precio_unitario())*0.19;
     return iva;
 }
-int Factura::subTotal(){
-}
 int Factura::total(){
 }
 /*se formula un struct para mostrar los mismos
@@ -58,17 +56,18 @@ struct linea_detalle{
     int cant_precio; //calculo de subTotal();
     string descrip;
 };
+typedef linea_detalle LD;
 
 void Factura::addLinea(int _cantidad, int precio_unitario, string _descripcion){
     LineaDetalle new_line(_cantidad, precio_unitario, _descripcion);
-    linea_detalle line;
+    /*LD line;
     line.cant = get_cantidad();
     line.precio = get_precio_unitario();
     line.cant_precio = subTotal();
-    line.descrip = get_descripcion();
-    Stack<linea_detalle> s;
-    s.push(line);
-    s.mostrarStack(s);
+    line.descrip = get_descripcion();*/
+    Stack<LineaDetalle> s;
+    s.push(new_line);
+    s.mostrar_stack(s);
 }
 void Factura::ver(){
     /*pruebas ver()
@@ -85,10 +84,22 @@ void Factura::ver(){
              << "\n   Nombre: " << get_nombreCliente()
              << "\n=========================================================\n"
              << " #\tDescipcion\t\tPrecio\t\tSubtotal\n";
+
         /*while (/*stack != NULL){
         //se deben colocar descipciones entre 8 - 16 digitos.
         //<< " [Cant]\t[8-16 digitos]\t\t[precio]\t\t[Subtotal]";
             /*jejeje
         }*/
 
+}
+void mostrar_stack(Stack<LD> &s)
+{
+    Stack<LD> aux;
+    while (s.empty() == false)
+    {
+        LD temp = s.pop();
+        aux.push(temp);
+        cout << "\n"
+             << temp.cant;
+    }
 }

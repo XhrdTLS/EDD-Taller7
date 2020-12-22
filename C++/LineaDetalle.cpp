@@ -35,7 +35,14 @@ string LineaDetalle::get_descripcion(){
     return this->descripcion;
 }
 //methods
+//para utilizarlo en mostrar_stack se movió el metodo.
+int LineaDetalle::subTotal(){
+    int s_total;
+    s_total = (get_cantidad() * get_precio_unitario());
+    return s_total;
+}
 int LineaDetalle::subTotalLinea(){
+    
 }
 void LineaDetalle::ver(){
     //pruebas para ver()

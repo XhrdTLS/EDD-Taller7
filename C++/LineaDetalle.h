@@ -23,6 +23,7 @@ class LineaDetalle{
         int get_precio_unitario();
         string get_descripcion();
         //methods
+        int subTotal();
         int subTotalLinea();
 
         void ver();

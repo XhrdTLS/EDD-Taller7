@@ -22,18 +22,31 @@ public:
         return stack<Tipo>::empty();
     }
 
-    void mostrarStack(Stack<Tipo> &s)
+    /*void mostrarStack(Stack<linea_detalle> &s)
     {
-        Stack<Tipo> aux;
+        Stack<linea_detalle> aux;
         while (s.empty() == false)
         {
-            Tipo tmp = s.pop();
+            linea_detalle tmp = s.pop();
             aux.push(tmp);
             cout << tmp << endl;
         }
         //restauramos
         while (aux.empty() == false)
             s.push(aux.pop());
+    }*/
+    void mostrar_stack(Stack<LineaDetalle> &s)
+    {
+        Stack<LineaDetalle> aux;
+        while (s.empty() == false){
+            LineaDetalle temp = s.pop();
+            aux.push(temp);
+            cout << temp.get_cantidad()
+                 << "\t" << temp.get_descripcion()
+                 << "\t\t" << temp.get_precio_unitario()
+                 << "\t\t" << temp.subTotal() << endl;
+
+        }
     }
 };
 

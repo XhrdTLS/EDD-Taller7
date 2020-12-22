@@ -29,7 +29,6 @@ class Factura : public LineaDetalle{
         string get_nombreCliente();
         //methods
         int iva();
-        int subTotal();
         int total();
 
         void addLinea(int, int, string);
