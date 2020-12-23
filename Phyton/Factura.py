@@ -2,6 +2,8 @@
 @author: Tomas Lillo Silva | [411] EDD | 2020
 """
 from LineaDetalle import LineaDetalle
+from Stack import Stack
+
 class Factura(LineaDetalle):
     # Constructor
     def __init__(self, numero, fecha, rutCliente, nombreCliente):
@@ -10,7 +12,7 @@ class Factura(LineaDetalle):
        self.set_rutCliente(rutCliente)
        self.set_nombreCliente(nombreCliente)
         #suma los subtotales de cada addlinea
-       self.suma_subtotal = 0
+       self.suma_subTotal = 0
     def ingreso_f(self, numero, fecha, rutCliente, nombreCliente): 
         self.set_numero(numero)
         self.set_fecha(fecha)
@@ -30,7 +32,7 @@ class Factura(LineaDetalle):
         self.__nombreCliente = nombre_cliente
     
     def set_subTotal(self):
-        self.suma_subtotal = 0
+        self.suma_subTotal = 0
 
     #getters
     def get_numero(self):
@@ -48,14 +50,24 @@ class Factura(LineaDetalle):
     def get_subTotal(self):
         return self.suma_subTotal
     #methods
-    def subTotal(self):
-        self.suma_subtotal = self.suma_subtotal + (self.__cantidad * self.__precioUnitario)
+    def subTotal(self,cantidad,precio):
+        self.suma_subTotal = self.suma_subTotal + (cantidad * precio)
 
     def iva(self):
-        pass
+        iva = int(self.get_subTotal()*0.19)
+        return iva 
 
     def total(self):
-        return self.get_cantidad() + self.iva()
+        self._total = self.get_subTotal() + self.iva()
+        return self._total
+    
+    def addLinea(self,cantidad, precioUnitario, descripcion):
+        new_line = LineaDetalle()
+        new_line.ingreso_ld(cantidad,precioUnitario,descripcion)
+        self.subTotal(cantidad, precioUnitario)
+        s = Stack()
+        s.push(new_line)
+        #s.mostrar_stack(s)
     
     def ver(self):
         print("\n=========================================================\n",
@@ -70,6 +82,6 @@ class Factura(LineaDetalle):
     def ver_final(self):
         print("\n--------------------- Montos Finales - --------------------",
               "\n   Subtotal:\t", self.get_subTotal(),
-              "\n   IVA 19%:\t", self.iva(),
-              "\n   TOTAL:\t", self.total(),
+              "\n   IVA 19%:\t\t", self.iva(),
+              "\n   TOTAL:\t\t", self.total(),
               "\n=========================================================\n")

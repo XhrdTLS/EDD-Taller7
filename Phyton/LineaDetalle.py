@@ -7,6 +7,7 @@ class LineaDetalle:
         self.__cantidad = 0
         self.__precioUnitario = 0
         self.__descripcion = " "
+        
     def ingreso_ld(self, cantidad, precioUnitario, descipcion):
         self.set_cantidad(cantidad)
         self.set_precioUnitario(precioUnitario)

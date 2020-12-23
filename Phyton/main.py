@@ -24,3 +24,5 @@ def mostrarStack(s):
 print("    FACTURAS: Taller 7")
 f1 = Factura(10001, 20201212, "20258555-0", "Johan Shell")
 f1.ver()
+f1.addLinea(1,10000,"Cargador 33W")
+f1.ver_final()
