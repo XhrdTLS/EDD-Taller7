@@ -6,7 +6,11 @@ class LineaDetalle():
     def __init__(self):
         self.__cantidad = 0
         self.__precioUnitario = 0
-        self.__descipcion = ' '
+        self.__descripcion = " "
+    def LineaDetalle(self, cantidad, precioUnitario, descipcion):
+        self.set_cantidad(cantidad)
+        self.set_precioUnitario(precioUnitario)
+        self.set_descipcion(descipcion)
     #setters
     def set_cantidad(self, cantidad):
         self.__cantidad = cantidad
@@ -27,7 +31,10 @@ class LineaDetalle():
         return self.__descripcion
     #methods
     def subTotalLinea(self):
-        pass
-    
-    def ver():
-        pass
+        s_total = (self.get_cantidad() + self.get_precioUnitario())
+        return s_total
+       
+    def ver(self):
+        print(  "\n\t", self.get_cantidad(),
+                "\n\t", self.get_precioUnitario(),
+                "\n\t", self.get_descipcion()   )

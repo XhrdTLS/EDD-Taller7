@@ -7,10 +7,15 @@ class Factura(LineaDetalle()):
     def __init__(self):
        self.__numero = 0
        self.__fecha = 0
-       self.__rutCliente = ' '
-       self.__nombreCliente = ' '
+       self.__rutCliente = " "
+       self.__nombreCliente = " "
         #suma los subtotales de cada addlinea
        self.suma_subtotal = 0
+    def factura(self, numero, fecha, rutCliente, nombreCliente): 
+        self.set_numero(numero)
+        self.set_fecha(fecha)
+        self.set_rutCliente(rutCliente)
+        self.set_nombreCliente(nombreCliente)
     # setters
     def set_numero(self,numero):
         self.__numero = numero
@@ -24,7 +29,7 @@ class Factura(LineaDetalle()):
     def set_nombreCliente(self,nombre_cliente):
         self.__nombreCliente = nombre_cliente
     
-    def set_subTotal(self,ingreso):
+    def set_subTotal(self):
         self.suma_subtotal = 0
 
     #getters
@@ -44,10 +49,27 @@ class Factura(LineaDetalle()):
         return self.suma_subTotal
     #methods
     def subTotal(self):
-        pass
+        self.suma_subtotal = self.suma_subtotal + (self.__cantidad * self.__precioUnitario)
 
     def iva(self):
         pass
 
-    def total():
-        pass
+    def total(self):
+        return self.get_cantidad() + self.iva()
+    
+    def ver(self):
+        print("\n=========================================================\n",
+              "  Factura #", self.get_numero(),
+              "\t\t\t  Fecha ", self.get_fecha(),
+              "\n--------------------- Datos Cliente ---------------------",
+              "\n   Rut: ", self.get_rutCliente(),
+              "\n   Nombre: ", self.get_nombreCliente(),
+              "\n=========================================================\n",
+              " #\tDescipcion\t\tPrecio\t\tSubtotal\n")
+
+    def ver_final(self):
+        print("\n--------------------- Montos Finales - --------------------",
+              "\n   Subtotal:\t", self.get_subTotal(),
+              "\n   IVA 19%:\t", self.iva(),
+              "\n   TOTAL:\t", self.total(),
+              "\n=========================================================\n")
