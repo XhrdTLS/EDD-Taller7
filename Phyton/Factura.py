@@ -2,16 +2,16 @@
 @author: Tomas Lillo Silva | [411] EDD | 2020
 """
 from LineaDetalle import LineaDetalle
-class Factura(LineaDetalle()):
+class Factura(LineaDetalle):
     # Constructor
-    def __init__(self):
-       self.__numero = 0
-       self.__fecha = 0
-       self.__rutCliente = " "
-       self.__nombreCliente = " "
+    def __init__(self, numero, fecha, rutCliente, nombreCliente):
+       self.set_numero(numero)
+       self.set_fecha(fecha)
+       self.set_rutCliente(rutCliente)
+       self.set_nombreCliente(nombreCliente)
         #suma los subtotales de cada addlinea
        self.suma_subtotal = 0
-    def factura(self, numero, fecha, rutCliente, nombreCliente): 
+    def ingreso_f(self, numero, fecha, rutCliente, nombreCliente): 
         self.set_numero(numero)
         self.set_fecha(fecha)
         self.set_rutCliente(rutCliente)

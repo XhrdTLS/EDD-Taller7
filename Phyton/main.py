@@ -6,7 +6,7 @@ GitHub: https://github.com/XhrdTLS/EDD-Taller7
 """
 from Stack import Stack
 from LineaDetalle import LineaDetalle
-import Factura
+from Factura import Factura 
 
 def mostrarStack(s):
     #creamos un auxiliar
@@ -22,8 +22,5 @@ def mostrarStack(s):
         s.push(aux.pop())
 
 print("    FACTURAS: Taller 7")
-f1 = Factura()
-f1.factura(10001, 20201212, "20258555-0", "Johan Shell")
+f1 = Factura(10001, 20201212, "20258555-0", "Johan Shell")
 f1.ver()
-#L1 = LineaDetalle(1, 200, "jeje")
-#L1.ver()
