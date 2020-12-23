@@ -22,6 +22,8 @@ public:
     bool empty () {
         return stack<Tipo>::empty();
     }
+
+    //muestra el stack
     void mostrar_stack(Stack<LineaDetalle> &s)
     {
         Stack<LineaDetalle> aux;
@@ -31,8 +33,7 @@ public:
             cout << temp.get_cantidad()
                  << "\t" << temp.get_descripcion()
                  << "\t\t" << temp.get_precio_unitario()
-                 << "\t\t" << temp.subTotal() << endl;
-            temp.subTotalLinea(temp.get_cantidad,temp.get_precio_unitario);
+                 << "\t\t" << temp.subTotalLinea() << endl;
         }
     }
 };

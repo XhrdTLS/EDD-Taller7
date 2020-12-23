@@ -19,11 +19,18 @@ int main(){
     f1.addLinea(4,200,"Resistencia");
     f1.addLinea(2,500,"interruptor");
     f1.addLinea(1,4000,"SP108E DC5V");
+    cout << "\n" << f1.get_subTotal() << "\n";
     cout << "\n=========================================================\n";
     system("pause");
     system("cls");
-    //Factura f2(1010,20201214,"18554795-3","Silvana Regine");
-    //f2.ver();
+    Factura f2(1010,20201214,"18554795-3","Silvana Regine");
+    f2.ver();
+    f2.addLinea(1,160000,"Redmi Note 9");
+    f2.addLinea(2,3000,"Cable USB-C");
+    f2.addLinea(4,5000,"Carcasa Silic");
+    f2.addLinea(1,3000,"Protector SCR");
+    f2.addLinea(1,80000,"Audifonos TW");
+    cout << "\n" << f2.get_subTotal() << "\n";
     //system("pause");
     return 0;
 }

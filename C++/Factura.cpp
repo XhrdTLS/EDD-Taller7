@@ -12,6 +12,7 @@ Factura::Factura(int _numero, int _fecha, string rut_cliente, string nombre_clie
     set_fecha(_fecha);
     set_rutCliente(rut_cliente);
     set_nombreCliente(nombre_cliente);
+    set_subTotal(0);
 }
 Factura::~Factura(){}
 //setters
@@ -40,6 +41,9 @@ string Factura::get_rutCliente(){
 string Factura::get_nombreCliente(){
     return this->nombreCliente;
 }
+int Factura::get_subTotal(){
+    return suma_subTotal;
+}
 //methods
 int Factura::iva(){
     int iva;
@@ -50,10 +54,19 @@ int Factura::total(){
 }
 void Factura::addLinea(int _cantidad, int precio_unitario, string _descripcion){
     LineaDetalle new_line(_cantidad, precio_unitario, _descripcion);
+    subTotal(_cantidad, precio_unitario);
     Stack<LineaDetalle> s;
     s.push(new_line);
     s.mostrar_stack(s);
 }
+void Factura::set_subTotal(int _ingreso){
+    this->suma_subTotal = 0;
+}
+void Factura::subTotal(int _cantidad, int _precio){
+    this->suma_subTotal = suma_subTotal + (_cantidad * _precio);
+    //cout << "\n" <<this->suma_subTotal << "\n";
+}
+
 void Factura::ver(){
         cout << "\n=========================================================\n"
              << "  Factura #" << get_numero()
