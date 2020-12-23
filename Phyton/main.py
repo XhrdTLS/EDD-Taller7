@@ -5,6 +5,7 @@ GitHub: https://github.com/XhrdTLS/EDD-Taller7
 
 """
 from Stack import Stack
+from LineaDetalle import LineaDetalle
 
 def mostrarStack(s):
     #creamos un auxiliar
