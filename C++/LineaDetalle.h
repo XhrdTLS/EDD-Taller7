@@ -9,6 +9,7 @@ class LineaDetalle{
     private:
         int cantidad;
         int precioUnitario;
+        int total = 0;
         string descripcion;
     public:
         LineaDetalle();
@@ -18,10 +19,12 @@ class LineaDetalle{
         void set_cantidad(int);
         void set_precio_unitario(int);
         void set_descripcion(string);
+        void set_total(int, int);
         //getters
         int get_cantidad();
         int get_precio_unitario();
         string get_descripcion();
+        int get_total();
         //methods
         int subTotal();
         int subTotalLinea();

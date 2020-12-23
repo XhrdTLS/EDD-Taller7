@@ -4,6 +4,7 @@
 #include <iostream>
 #include <stack>
 #include "LineaDetalle.h"
+#include "Factura.h"
 using namespace std;
 template <class Tipo>
 class Stack : private stack<Tipo> {
@@ -21,20 +22,6 @@ public:
     bool empty () {
         return stack<Tipo>::empty();
     }
-
-    /*void mostrarStack(Stack<linea_detalle> &s)
-    {
-        Stack<linea_detalle> aux;
-        while (s.empty() == false)
-        {
-            linea_detalle tmp = s.pop();
-            aux.push(tmp);
-            cout << tmp << endl;
-        }
-        //restauramos
-        while (aux.empty() == false)
-            s.push(aux.pop());
-    }*/
     void mostrar_stack(Stack<LineaDetalle> &s)
     {
         Stack<LineaDetalle> aux;
@@ -45,7 +32,7 @@ public:
                  << "\t" << temp.get_descripcion()
                  << "\t\t" << temp.get_precio_unitario()
                  << "\t\t" << temp.subTotal() << endl;
-
+            temp.subTotalLinea(temp.get_cantidad,temp.get_precio_unitario);
         }
     }
 };
