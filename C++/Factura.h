@@ -33,11 +33,13 @@ class Factura : public LineaDetalle{
         int get_subTotal();
         //methods
         void subTotal(int, int);
-        int iva();
+        float iva();
         int total();
 
         void addLinea(int, int, string);
         void ver();
+        /*se agrega al final del addlinea (que muestra el stack completo)*/
+        void ver_final();
 };
 
 #endif // FACTURA_H

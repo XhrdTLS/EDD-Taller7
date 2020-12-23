@@ -45,12 +45,13 @@ int Factura::get_subTotal(){
     return suma_subTotal;
 }
 //methods
-int Factura::iva(){
-    int iva;
-    iva = (get_precio_unitario())*0.19;
+float Factura::iva(){
+    float iva;
+    iva = (get_subTotal()*0.19);
     return iva;
 }
 int Factura::total(){
+    return (get_subTotal() + iva());
 }
 void Factura::addLinea(int _cantidad, int precio_unitario, string _descripcion){
     LineaDetalle new_line(_cantidad, precio_unitario, _descripcion);
@@ -76,4 +77,11 @@ void Factura::ver(){
              << "\n   Nombre: " << get_nombreCliente()
              << "\n=========================================================\n"
              << " #\tDescipcion\t\tPrecio\t\tSubtotal\n";
+}
+void Factura::ver_final(){
+    cout << "\n--------------------- Montos Finales ---------------------"
+         << "\n   Subtotal:\t" << get_subTotal()
+         << "\n   IVA 19%:\t" << iva()
+         << "\n   TOTAL:\t" << total()
+         << "\n=========================================================\n";
 }
