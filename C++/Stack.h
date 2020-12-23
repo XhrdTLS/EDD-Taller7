@@ -30,7 +30,7 @@ public:
         while (s.empty() == false){
             LineaDetalle temp = s.pop();
             aux.push(temp);
-            cout << temp.get_cantidad()
+            cout << " "<< temp.get_cantidad()
                  << "\t" << temp.get_descripcion()
                  << "\t\t" << temp.get_precio_unitario()
                  << "\t\t" << temp.subTotalLinea() << endl;

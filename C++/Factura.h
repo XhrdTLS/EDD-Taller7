@@ -13,7 +13,7 @@ class Factura : public LineaDetalle{
         int fecha;
         string rutCliente;
         string nombreCliente;
-        //para calcular el subtotal de cada addlinea
+        //para sumar el subtotal de cada addlinea
         int suma_subTotal = 0;
     public:
         Factura();

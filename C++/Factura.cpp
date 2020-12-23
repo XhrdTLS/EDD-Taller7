@@ -67,17 +67,18 @@ void Factura::subTotal(int _cantidad, int _precio){
     this->suma_subTotal = suma_subTotal + (_cantidad * _precio);
     //cout << "\n" <<this->suma_subTotal << "\n";
 }
-
+//muestra informacion del cliente
 void Factura::ver(){
         cout << "\n=========================================================\n"
              << "  Factura #" << get_numero()
-             << "\t\t\t\tFecha " << get_fecha()
+             << "\t\t\t  Fecha " << get_fecha()
              << "\n--------------------- Datos Cliente ---------------------"
              << "\n   Rut: " << get_rutCliente()
              << "\n   Nombre: " << get_nombreCliente()
              << "\n=========================================================\n"
              << " #\tDescipcion\t\tPrecio\t\tSubtotal\n";
 }
+//muestra los montos finales
 void Factura::ver_final(){
     cout << "\n--------------------- Montos Finales ---------------------"
          << "\n   Subtotal:\t" << get_subTotal()
