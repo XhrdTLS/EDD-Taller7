@@ -67,7 +67,7 @@ class Factura(LineaDetalle):
         self.subTotal(cantidad, precioUnitario)
         s = Stack()
         s.push(new_line)
-        #s.mostrar_stack(s)
+        s.mostrarStack(s)
     
     def ver(self):
         print("\n=========================================================\n",
@@ -77,7 +77,7 @@ class Factura(LineaDetalle):
               "\n   Rut: ", self.get_rutCliente(),
               "\n   Nombre: ", self.get_nombreCliente(),
               "\n=========================================================\n",
-              " #\tDescipcion\t\tPrecio\t\tSubtotal\n")
+              " #\t\tDescipcion\t\tPrecio\t\tSubtotal\n")
 
     def ver_final(self):
         print("\n--------------------- Montos Finales - --------------------",

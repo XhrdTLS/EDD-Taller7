@@ -1,6 +1,7 @@
 """
 @author: Tomas Lillo Silva | [411] EDD | 2020
 """
+from LineaDetalle import LineaDetalle
 class Stack:
     #Definimos Constructor
     def __init__(self):
@@ -31,5 +32,21 @@ class Stack:
         else:
             return False
     #fin empty
+    
+    def mostrarStack(self,s):
+        #creamos un auxiliar
+        aux = Stack()
+        #recorremos el stack
+        while (s.empty() == False):
+            temp = s.pop()
+            print(" ", temp.get_cantidad(),
+                  "\t", temp.get_descipcion(),
+                  "\t\t", temp.get_precioUnitario(),
+                  "\t\t", temp.subTotalLinea(), "\n")
+            aux.push(temp)
+            
+        #volvemos a colocar los datos en el stack original
+        #   while (aux.empty() == False):
+        #       s.push(aux.pop())
     
 #fin clase Stack
