@@ -13,6 +13,10 @@ Repl.it Python
 https://repl.it/@XhrdTLS/Taller7Python#main.py
 
 
+Video Youtube:
+
+-Por definir-
+
 ~~--~~
 
 Por: 
