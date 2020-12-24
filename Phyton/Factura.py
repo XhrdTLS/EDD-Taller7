@@ -80,7 +80,7 @@ class Factura(LineaDetalle):
               " #\t\tDescipcion\t\tPrecio\t\tSubtotal\n")
 
     def ver_final(self):
-        print("\n--------------------- Montos Finales - --------------------",
+        print("--------------------- Montos Finales - --------------------",
               "\n   Subtotal:\t", self.get_subTotal(),
               "\n   IVA 19%:\t\t", self.iva(),
               "\n   TOTAL:\t\t", self.total(),
