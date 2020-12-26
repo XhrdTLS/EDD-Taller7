@@ -67,6 +67,7 @@ void Factura::subTotal(int _cantidad, int _precio){
     this->suma_subTotal = suma_subTotal + (_cantidad * _precio);
     //cout << "\n" <<this->suma_subTotal << "\n";
 }
+
 //muestra informacion del cliente
 void Factura::ver(){
         cout << "\n=========================================================\n"
@@ -79,6 +80,7 @@ void Factura::ver(){
              << " #\tDescipcion\t\tPrecio\t\tSubtotal\n";
 }
 //muestra los montos finales
+
 void Factura::ver_final(){
     cout << "\n--------------------- Montos Finales ---------------------"
          << "\n   Subtotal:\t" << get_subTotal()

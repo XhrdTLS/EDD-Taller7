@@ -20,10 +20,10 @@ public class Stack<tipo> {
     public boolean empty() {
         return stack_temp.isEmpty();
     }
+    
     //muestra el stack
     public static void mostrar_stack(Stack<LineaDetalle> s) {
         Stack<LineaDetalle> aux = new Stack<LineaDetalle>();
-
         while (!s.empty()) {
             LineaDetalle temp = s.pop();
             aux.push(temp);

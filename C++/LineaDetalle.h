@@ -7,10 +7,12 @@ using namespace std;
 
 class LineaDetalle{
     private:
+        //atributes
         int cantidad;
         int precioUnitario;
         string descripcion;
     public:
+        //constructors
         LineaDetalle();
         LineaDetalle(int,int,string);
         virtual ~LineaDetalle();

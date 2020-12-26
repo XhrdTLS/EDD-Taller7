@@ -2,8 +2,8 @@
 @author: Tomas Lillo Silva | [411] EDD | 2020
 Links: https://repl.it/@XhrdTLS/Taller7Python#main.py
 GitHub: https://github.com/XhrdTLS/EDD-Taller7
-
 """
+
 from Stack import Stack
 from LineaDetalle import LineaDetalle
 from Factura import Factura 

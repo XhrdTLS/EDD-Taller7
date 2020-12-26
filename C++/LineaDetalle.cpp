@@ -41,7 +41,6 @@ int LineaDetalle::subTotalLinea(){
     return s_total;
 }
 void LineaDetalle::ver(){
-    //pruebas para ver()
     cout << "\n\t" << get_cantidad()
          << "\n\t" << get_precio_unitario()
          << "\n\t" << get_descripcion();

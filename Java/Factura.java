@@ -82,13 +82,13 @@ public class Factura {
     }
     // muestra informacion del cliente
     public void ver() {
-        System.out.println("\n=========================================================\n"+
+        System.out.println("\n==========================================================\n"+
                            "  Factura #" + get_numero() +
                            "\t\t\t  Fecha " + get_fecha() +
                            "\n--------------------- Datos Cliente ---------------------" +
                            "\n   Rut: " + get_rutCliente() +
                            "\n   Nombre: " + get_nombreCliente() +
-                           "\n=========================================================\n" +
+                           "\n==========================================================\n" +
                            " #\tDescipcion\t\tPrecio\t\tSubtotal\n");
     }
     // muestra los montos finales
@@ -97,6 +97,6 @@ public class Factura {
                            + "\n   Subtotal:\t" + get_subTotal()
                            + "\n   IVA 19%:\t" + iva()
                            + "\n   TOTAL:\t" + total()
-                           + "\n=========================================================\n");           
+                           + "\n==========================================================\n");           
     }
 }

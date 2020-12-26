@@ -6,6 +6,7 @@
 #include "LineaDetalle.h"
 #include "Factura.h"
 using namespace std;
+
 template <class Tipo>
 class Stack : private stack<Tipo> {
 public:

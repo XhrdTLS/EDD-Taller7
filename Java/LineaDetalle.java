@@ -1,5 +1,6 @@
 /* Tomas Lillo Silva | [411] EDD | 2020          */
 import java.io.*;
+
 public class LineaDetalle {
     //atributes    
     private int cantidad;

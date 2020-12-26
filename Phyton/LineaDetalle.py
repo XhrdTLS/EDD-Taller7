@@ -1,6 +1,7 @@
 """
 @author: Tomas Lillo Silva | [411] EDD | 2020
 """
+
 class LineaDetalle:
     # Constuctor
     def __init__(self):

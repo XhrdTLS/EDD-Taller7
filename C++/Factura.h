@@ -9,6 +9,7 @@ using namespace std;
 
 class Factura : public LineaDetalle{
     private:
+        //atributes
         int numero;
         int fecha;
         string rutCliente;
@@ -16,6 +17,7 @@ class Factura : public LineaDetalle{
         //para sumar el subtotal de cada addlinea
         int suma_subTotal = 0;
     public:
+        //constructors
         Factura();
         Factura(int,int,string,string);
         virtual ~Factura();
